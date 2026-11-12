@@ -346,6 +346,8 @@ exec_always --no-startup-id setxkbmap es
 #exec_always --no-startup-id setxkbmap en
 #exec_always --no-startup-id setxkbmap latam
 
+exec_always --no-startup-id $virtmgr
+
 # for_window [class="URxvt"] floating enable
 # for_window [class="firefox"] move to workspace $ws2
 
