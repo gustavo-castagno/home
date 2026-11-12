@@ -63,8 +63,8 @@ set $delaymovemouse "sh -c 'xdotool sleep 0.5; eval `xdotool getactivewindow get
 bindsym Mod1+Control+t exec i3-sensible-terminal; exec --no-startup-id $delaymovemouse
 bindsym $mod+Return exec i3-sensible-terminal; exec --no-startup-id $delaymovemouse
 bindsym $mod+Shift+f split toggle, exec librewolf; exec --no-startup-id $delaymovemouse
-bindsym $mod+Shift+t split toggle, exec "kitty"; exec --no-startup-id $delaymovemouse
-bindsym $mod+Shift+c split toggle, exec "urxvt"; exec --no-startup-id $delaymovemouse
+bindsym $mod+Shift+c split toggle, exec "kitty"; exec --no-startup-id $delaymovemouse
+bindsym $mod+Shift+t split toggle, exec "urxvt"; exec --no-startup-id $delaymovemouse
 # bindsym $mod+Shift+f [class="URxvt"] exec urxvt
 
 # kill focused window
@@ -298,14 +298,47 @@ bar {
 	status_command i3status
 }
 
+
+#gaps inner 8px
+#gaps outer -8px
+gaps inner 0px
+gaps outer 0px
+smart_gaps inverse_outer
+
 default_border none
 default_floating_border none
+#default_floating_border pixel 2
+
+#default_border pixel 4
+#default_floating_border pixel 4
+
+#hide_edge_borders horizontal
+#hide_edge_borders vertical
+#hide_edge_borders both
+#hide_edge_borders smart
+hide_edge_borders smart_no_gaps
+
+workspace $ws1 gaps vertical 90px
+workspace $ws1 gaps horizontal 6px
+
+workspace $ws3 gaps vertical 0px
+workspace $ws3 gaps right 957px
+workspace $ws3 gaps inner 6px
+workspace $ws3 gaps left 0px
+
+workspace $ws4 gaps vertical 0px
+workspace $ws4 gaps right 957px
+workspace $ws4 gaps inner 6px
+workspace $ws4 gaps left 0px
+
 
 workspace_auto_back_and_forth no
 
 #exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom --vsync --backend glx -c -r 4 -l -4 -t -4 --shadow-color "#FFFFFF" --unredir-if-possible --unredir-if-possible-delay 500
-exec_always --no-startup-id feh --bg-fill ~/Documents/user/background.png
+exec_always --no-startup-id feh --bg-fill ~/wallpaper.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Documents/user/background.png
+
 exec_always --no-startup-id xset -dpms # disables Display Power Management Signaling
 exec_always --no-startup-id xset s off # disables Display Power Management Signaling
 
