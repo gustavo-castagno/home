@@ -336,7 +336,12 @@ workspace_auto_back_and_forth no
 
 #exec_always --no-startup-id nitrogen --restore
 #exec_always --no-startup-id picom --vsync --backend glx -c -r 4 -l -4 -t -4 --shadow-color "#FFFFFF" --unredir-if-possible --unredir-if-possible-delay 500
-exec_always --no-startup-id picom --vsync --backend glx --unredir-if-possible --blur-method kawase --blur-strength 5 --corner-radius 16 --rounded-corners-exclude "!I3_FLOATING_WINDOW@:c" -c -r 4 -l -4 -t -4 --shadow-color "#FFFFFF" --shadow-exclude "window_type = 'tooltip' || window_type = 'notification' || role = 'Popup' || window_type = 'popup_menu' || window_type = 'dropdown_menu'" --blur-background-exclude "!(class_g = 'kitty' || class_g = 'Gnome-terminal')"
+#exec_always --no-startup-id picom --vsync --backend glx --unredir-if-possible --blur-method kawase --blur-strength 5 --corner-radius 16 --rounded-corners-exclude "!I3_FLOATING_WINDOW@:c" -c -r 4 -l -4 -t -4 --shadow-color "#FFFFFF" --shadow-exclude "window_type = 'tooltip' || window_type = 'notification' || role = 'Popup' || window_type = 'popup_menu' || window_type = 'dropdown_menu'" --blur-background-exclude "!(class_g = 'kitty' || class_g = 'Gnome-terminal')"
+
+exec_always --no-startup-id picom --vsync --backend glx --unredir-if-possible --blur-method kawase --blur-strength 5 --corner-radius 16 --rounded-corners-exclude "!I3_FLOATING_WINDOW@:c" -c -r 4 -l -4 -t -4 --shadow-color "#FFFFFF" --shadow-exclude "window_type *= 'menu' || window_type = 'tooltip' || window_type = 'combo' || window_type = 'dnd' || window_type = 'notification' || role = 'Popup'" --blur-background-exclude "!(class_g = 'kitty' || class_g = 'Gnome-terminal')"
+
+
+
 
 exec_always --no-startup-id feh --bg-fill ~/wallpaper.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Documents/user/background.png
