@@ -49,28 +49,3 @@
 (set-face-background 'mode-line-inactive "undefined")
 
 (set-face-background 'default "undefined")
-
-;;(set-frame-parameter nil 'alpha-background 70)
-;;(add-to-list 'default-frame-alist '(alpha-background . 70))
-
-;;(set-frame-parameter (selected-frame) 'alpha '(70 70))
-;;(add-to-list 'default-frame-alist '(alpha 70 70))
-
-;;(add-to-list 'default-frame-alist '(foreground-color . "#FFFFFF"))
-;;(add-to-list 'default-frame-alist '(background-color . "#000000"))
-
-
-
-
-
-
-;; Fix Shift + Arrow keys inside tmux
-(when (not (display-graphic-p))
-  (let ((xterm-keys
-         '(("\e[1;2A" . [S-up])
-           ("\e[1;2B" . [S-down])
-           ("\e[1;2C" . [S-right])
-           ("\e[1;2D" . [S-left]))))
-    (dolist (k xterm-keys)
-      (define-key input-decode-map (car k) (cdr k)))))
-
